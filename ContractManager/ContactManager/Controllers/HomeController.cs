@@ -1,26 +1,34 @@
 using System.Diagnostics;
 using ContactManager.Models;
+using ContactManager.ServiceContracts;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ContactManager.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
+    private readonly ICsvProcessingService _csvProcessingService;
+    private readonly IContactService _contactService;
+    public HomeController(ICsvProcessingService csvProcessingService, IContactService contactService)
     {
-        _logger = logger;
+        _csvProcessingService = csvProcessingService;
+        _contactService = contactService;
     }
 
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
-        return View();
+        var contacts = await _contactService.GetAllContactsAsync();
+        
+        return View(contacts);
     }
 
-    public IActionResult Privacy()
+    [Route("upload")]
+    [HttpPost]
+    public async Task<IActionResult> Upload(IFormFile file)
     {
-        return View();
+        var processedContacts = await _csvProcessingService.ProcessContactsAsync(file);
+        
+        return View(processedContacts);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

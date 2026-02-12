@@ -1,7 +1,13 @@
+using ContactManager.ServiceContracts;
+using ContactManager.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
+builder.Services.AddScoped<ICsvProcessingService, CsvProcessingService>();
+builder.Services.AddScoped<IContactService, ContactService>();
 
 var app = builder.Build();
 
