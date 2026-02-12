@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactManager", "ContactManager\ContactManager.csproj", "{5C9121D0-F099-4C96-A2AA-D4D4F49CA2EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C9121D0-F099-4C96-A2AA-D4D4F49CA2EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C9121D0-F099-4C96-A2AA-D4D4F49CA2EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C9121D0-F099-4C96-A2AA-D4D4F49CA2EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C9121D0-F099-4C96-A2AA-D4D4F49CA2EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
