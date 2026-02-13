@@ -13,8 +13,6 @@ body {
   color: #2c3e50;
 }
 
-/* ===== Page Centering ===== */
-
 .page-wrapper {
   display: flex;
   flex-direction: column;
@@ -24,27 +22,21 @@ body {
   width: 100%;
 }
 
-/* Center heading */
-
 .display-4 {
   text-align: center;
   margin-bottom: 30px;
 }
 
-/* ===== Scrollable Table ===== */
-
 .table-container {
   width: 80%;
   max-width: 1100px;
-  max-height: 500px;        /* вертикальний scroll */
+  max-height: 500px;
   overflow-y: auto;
-  overflow-x: auto;         /* якщо багато колонок */
+  overflow-x: auto;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   background: white;
 }
-
-/* Sticky header */
 
 .table thead th {
   position: sticky;
@@ -52,6 +44,17 @@ body {
   background-color: #2c3e50;
   color: white;
   z-index: 10;
+}
+
+th {
+  position: relative;
+  user-select: none;
+}
+
+.sort-indicator {
+  font-size: 0.8em;
+  margin-left: 5px;
+  color: #555;
 }
 
 .table {
